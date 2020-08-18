@@ -8,7 +8,9 @@
 
 /* reset */
 *, *:before, *:after { margin:0; padding:0; line-height:1.4; box-sizing:border-box; -webkit-box-sizing:border-box; font-weight:400; font-size:inherit; font-style:normal; text-decoration:none; font-family:'NotoSerif',sans-serif; color:#444; letter-spacing:0; }
-ul { list-style:disc; text-indent:20px; }
+ul { list-style:disc; display:block; }
+ul > li { text-indent:20px; }
+ul > li > p { text-indent:0; }
 i { font-style:italic; }
 p, span, a, input, textarea, li { font-size:14px; }
 h1 { font-size:16px; }
@@ -31,6 +33,12 @@ section:not(:last-child) { border-bottom:1px dashed #ddd; }
 section h1 { text-align:center; margin-bottom:15px; }
 section > p,
 section > ul { max-width:800px; margin:0 auto; }
-section li { font-style:italic; }
+section > a { display:inline-block; }
+section li { display:block; }
+section li,
+section li > p { font-style:italic; }
+section li > p { display:inline-block; vertical-align:middle; }
 section > p:not(:last-child) { margin-bottom:10px; }
 section > ul:not(:last-child) { margin-bottom:20px; }
+section > ul a { width:15px; display:inline-block; vertical-align:middle; margin-left:5px; }
+section > ul a > img { width:100%; display:block; }

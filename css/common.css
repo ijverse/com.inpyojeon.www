@@ -1,27 +1,36 @@
 /* font */
-@import (Railway-Light.ttf);
+@font-face {
+	font-family:"NotoSerif";
+	src:url("NotoSerif.otf") format("opentype");
+	font-style:normal;
+	font-weight:400;
+}
 
 /* reset */
-*, *:before, *:after { margin:0; padding:0; line-height:1.4; box-sizing:border-box; -webkit-box-sizing:border-box; font-weight:300; font-weight:light; font-size:inherit; font-style:normal; text-decoration:none; font-family:'Raleway',sans-serif; color:#222; letter-spacing:0; }
-ul { list-style:none; }
+*, *:before, *:after { margin:0; padding:0; line-height:1.4; box-sizing:border-box; -webkit-box-sizing:border-box; font-weight:400; font-size:inherit; font-style:normal; text-decoration:none; font-family:'NotoSerif',sans-serif; color:#444; letter-spacing:0; }
+ul { list-style:disc; text-indent:20px; }
 i { font-style:italic; }
-p, span, a, input, textarea { font-size:15px; }
-h1 { font-size:18px; }
+p, span, a, input, textarea, li { font-size:14px; }
+h1 { font-size:16px; }
 fieldset { border:0; display:block; }
 button { background:none; }
 input, textarea, button, select, a { -webkit-tap-highlight-color:rgba(0,0,0,0); }
 
 /* elements */
-body { width:100%; padding-top:72px; background:#f7f7f7; }
-header, section { display:block; width:100%; min-width:240px; }
-header { text-align:center; position:fixed; top:0; left:0; background:#fff; padding:10px; }
-header h1 { margin-bottom:5px; }
+body { width:100%; padding-top:69px; }
+header,
+section { display:block; width:100%; min-width:240px; }
+header { text-align:center; position:fixed; top:0; left:0; background:rgba(255,255,255,.9); padding:10px; border-bottom:1px dashed #ddd; }
+header h1 { margin-bottom:8px; }
 header > a { display:block; margin-bottom:5px; }
 header nav { display:block; font-size:0; }
-header nav a { font-size:16px; color:#888; }
+header nav a { font-size:14px; color:#999; }
 header nav a:not(:first-child) { margin-left:15px; }
-section { height:1000px; padding:20px 10px; }
+section { padding:20px 10px; }
+section:not(:last-child) { border-bottom:1px dashed #ddd; }
 section h1 { text-align:center; margin-bottom:15px; }
-section#works { background:#f3f3f3; }
-section > p { max-width:640px; margin:0 auto; }
+section > p,
+section > ul { max-width:800px; margin:0 auto; }
+section li { font-style:italic; }
 section > p:not(:last-child) { margin-bottom:10px; }
+section > ul:not(:last-child) { margin-bottom:20px; }

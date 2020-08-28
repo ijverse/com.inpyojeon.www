@@ -8,37 +8,35 @@
 
 /* reset */
 *, *:before, *:after { margin:0; padding:0; line-height:1.4; box-sizing:border-box; -webkit-box-sizing:border-box; font-weight:400; font-size:inherit; font-style:normal; text-decoration:none; font-family:'NotoSerif',sans-serif; color:#444; letter-spacing:0; }
-ul { list-style:disc; display:block; }
-ul > li { text-indent:20px; }
-ul > li > p { text-indent:0; }
+ul { display:block; }
+ul > li { margin-left:20px; list-style:none; position:relative; }
 i { font-style:italic; }
 p, span, a, input, textarea, li { font-size:14px; }
-h1 { font-size:16px; }
 fieldset { border:0; display:block; }
 button { background:none; }
 input, textarea, button, select, a { -webkit-tap-highlight-color:rgba(0,0,0,0); }
 
 /* elements */
-body { width:100%; padding-top:69px; }
+body { width:100%; padding-top:67px; }
+header { z-index:10; }
 header,
 section { display:block; width:100%; min-width:240px; }
 header { text-align:center; position:fixed; top:0; left:0; background:rgba(255,255,255,.9); padding:10px; border-bottom:1px dashed #ddd; }
-header h1 { margin-bottom:8px; }
+header h1 { margin-bottom:8px; font-size:16px; }
 header > a { display:block; margin-bottom:5px; }
 header nav { display:block; font-size:0; }
-header nav a { font-size:14px; color:#999; }
+header nav a { font-size:12px; color:#999; }
 header nav a:not(:first-child) { margin-left:15px; }
 section { padding:20px 10px; }
 section:not(:last-child) { border-bottom:1px dashed #ddd; }
-section h1 { text-align:center; margin-bottom:15px; }
+section h1 { text-align:center; margin-bottom:12px; font-size:15px; }
 section > p,
 section > ul { max-width:800px; margin:0 auto; }
 section > a { display:inline-block; }
 section li { display:block; }
+section li:before { content:'-'; position:absolute; left:-10px; top:2px; display:inline-block; }
 section li,
 section li > p { font-style:italic; }
-section li > p { display:inline-block; vertical-align:middle; }
-section > p:not(:last-child) { margin-bottom:10px; }
-section > ul:not(:last-child) { margin-bottom:20px; }
-section > ul a { width:15px; display:inline-block; vertical-align:middle; margin-left:5px; }
-section > ul a > img { width:100%; display:block; }
+section li > p > em { color:#999; font-style:italic; font-size:10px; margin-left:10px; }
+section > p:not(:last-child) { margin-bottom:6px; }
+section > ul:not(:last-child) { margin-bottom:12px; }

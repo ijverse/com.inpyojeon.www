@@ -1,10 +1,5 @@
 /* font */
-@font-face {
-	font-family:"NotoSerif";
-	src:url("NotoSerif.otf") format("opentype");
-	font-style:normal;
-	font-weight:400;
-}
+@font-face { font-family:"NotoSerif"; src:url("NotoSerif.otf") format("opentype"); font-style:normal; font-weight:400; }
 
 /* reset */
 *, *:before, *:after { margin:0; padding:0; line-height:1.4; box-sizing:border-box; -webkit-box-sizing:border-box; font-weight:400; font-size:inherit; font-style:normal; text-decoration:none; font-family:'NotoSerif',sans-serif; color:#444; letter-spacing:0; }
@@ -18,11 +13,14 @@ input, textarea, button, select, a { -webkit-tap-highlight-color:rgba(0,0,0,0); 
 
 /* elements */
 body { width:100%; padding-top:67px; }
+body.ver_eng .kor { display:none; }
+body.ver_kor .eng { display:none; }
 header { z-index:10; }
 header,
 section { display:block; width:100%; min-width:240px; }
 header { text-align:center; position:fixed; top:0; left:0; background:rgba(255,255,255,.9); padding:10px; border-bottom:1px dashed #ddd; }
-header h1 { margin-bottom:8px; font-size:16px; }
+header h1 { display:inline-block; margin:0 auto 8px; font-size:16px; position:relative; }
+header h1 a { position:absolute; top:5px; left:100px; display:inline-block; font-size:10px; color:#999; white-space:nowrap; }
 header > a { display:block; margin-bottom:5px; }
 header nav { display:block; font-size:0; }
 header nav a { font-size:12px; color:#999; }
@@ -30,13 +28,25 @@ header nav a:not(:first-child) { margin-left:15px; }
 section { padding:20px 10px; }
 section:not(:last-child) { border-bottom:1px dashed #ddd; }
 section h1 { text-align:center; margin-bottom:12px; font-size:15px; }
-section > p,
-section > ul { max-width:800px; margin:0 auto; }
-section > a { display:inline-block; }
-section li { display:block; }
-section li:before { content:'-'; position:absolute; left:-10px; top:2px; display:inline-block; }
-section li,
-section li > p { font-style:italic; }
-section li > p > em { color:#999; font-style:italic; font-size:10px; margin-left:10px; }
-section > p:not(:last-child) { margin-bottom:6px; }
-section > ul:not(:last-child) { margin-bottom:12px; }
+section > div > p,
+section > div > ul { max-width:800px; margin:0 auto; }
+section > div > a { display:inline-block; }
+section > div li { display:block; }
+section > div li:before { content:'-'; position:absolute; left:-10px; top:2px; display:inline-block; }
+section > div li,
+section > div li > p { font-style:italic; }
+section > div li > p > em { color:#999; font-style:italic; font-size:10px; margin-left:10px; }
+section > div > p:not(:last-child) { margin-bottom:6px; }
+section > div > ul:not(:last-child) { margin-bottom:12px; }
+div.dim { position:fixed; top:0; left:0; width:100%; height:100%; z-index:20; background:rgba(0,0,0,.7); display:none; }
+div.dim div.detail { background:#fff; position:absolute; top:50%; left:50%; -webkit-transform:translate(-50%, -50%); transform:translate(-50%, -50%); width:80%; max-width:400px; max-height:80%; display:none; }
+div.dim div.detail h1 { font-size:16px; display:block; width:100%; padding:10px; text-align:center; border-bottom:1px dashed #ddd; }
+div.dim div.detail div.desc { padding:20px; overflow-y:auto; }
+div.dim div.detail div.desc .imgwrap { display:block; width:200px; height:200px; margin:0 auto 20px; border:1px dashed #ddd; overflow:hidden; }
+div.dim div.detail div.desc .imgwrap img { display:block; width:100%; height:auto; }
+div.dim div.detail div.desc p,
+div.dim div.detail div.btnset a { font-size:13px; }
+div.dim div.detail div.btnset { display:block; width:100%; font-size:0; }
+div.dim div.detail div.btnset a { display:inline-block; width:50%; text-align:center; border-top:1px dashed #ddd; padding:10px; }
+div.dim div.detail div.btnset a:first-child { border-right:1px dashed #ddd; }
+a.popupbtn { text-decoration:underline; }
